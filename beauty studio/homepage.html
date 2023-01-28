@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beauty Studio L</title>
+        <meta name="author" content="Lidija Zunic">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/homepage.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+    </head>
+    <body>
+        
+        <div class="naslovna">
+            <img src="fotografije/naslovna.png" alt="" class="naslovna-foto">
+        </div>
+    
+        <div id="navigation-bar">
+            <a href="homepage.html">Homepage</a>
+            <a href="#">Gallery</a>
+            <a href="#services">Our services</a>
+            <a href="#">Reviews</a>
+            <a href="#">Contact</a>
+        </div>
+       
+        
+<div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="fotografije/pocetna.jpg" style="width:100%">
+      <div class="text">We use best products</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="fotografije/pocetna2.jpg" style="width:100%">
+      <div class="text">We have very precise workers</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="fotografije/pocetna3.jpg" style="width:100%">
+      <div class="text">We have comfortable studio</div>
+    </div>
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+ 
+  <script>
+    let slideIndex = 1;
+        showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+<br>
+<br>
+        <div id="services">
+            <div class="hair">
+                <a href="#" class="services-naslov">Hair</a>
+                <hr>
+                <img src="fotografije/hair.jpg" alt="" class="hair-foto">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias unde quaerat quibusdam nemo aut, sunt natus reiciendis eligendi maiores consequatur nostrum ut nihil necessitatibus cupiditate ipsum beatae esse, nam consectetur!</p>
+            </div>
+            <div class="nails">
+                <a href="#" class="services-naslov">Nails</a>
+                <hr>
+                <img src="fotografije/nails.jpg" alt="" class="nails-foto">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias unde quaerat quibusdam nemo aut, sunt natus reiciendis eligendi maiores consequatur nostrum ut nihil necessitatibus cupiditate ipsum beatae esse, nam consectetur!</p>
+            </div>
+            <div class="makeup">
+                <a href="#" class="services-naslov">Makeup</a>
+                <hr>
+                <img src="fotografije/makeup.jpg" alt="" class="makeup-foto">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias unde quaerat quibusdam nemo aut, sunt natus reiciendis eligendi maiores consequatur nostrum ut nihil necessitatibus cupiditate ipsum beatae esse, nam consectetur!</p>
+            </div>
+        </div>
+
+        <div class="contact" id="contact">
+            <div class="container"><h2 class="text-capitalize">Reservations</h2></div>
+            <hr>
+            <div class="contact-child">
+                <div class="container">
+                            <div class="contact-form">
+                                <form>
+                                    <input type="text" placeholder="Name">
+                                    <input type="text" placeholder="Phone number">
+                                    <input type="date" id="start" name="trip-start"
+                                     value="YYYY-MM-DD"
+                                     min="2023-01-01" max="2025-01-01">
+                                    <input type="text" placeholder="Type of service">
+                                    <input type="button" value="Reserve">
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <h3 class="footer-copyright">Beauty Studio L&copy;All Rights Reserved</h3>
+        </div>
+    </body>
+</html>
